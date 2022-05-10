@@ -11,8 +11,10 @@ En esta práctica vas a trabajar con issues en GitHub. Trabajaréis en parejas:
 
 Entrega dos urls:
 
-Issues creados: Donde estén todos los issues que has creado 
+**Issues creados: Donde estén todos los issues que has creado** 
+
 https://github.com/Antoniocb3/PR4.4-Documentacion-JavaDoc/issues?q=is%3Aopen+is%3Aissue
 
-Issues cerrados: Donde estén todos los issues que has cerrado
+**Issues cerrados: Donde estén todos los issues que has cerrado**
+
 https://github.com/Antoniocb3/PR4.4-Documentacion-JavaDoc/issues?q=is%3Aissue+is%3Aclosed
