@@ -33,7 +33,10 @@ import gestisimal.exceptions.WarehouseArticleNotExistsException;
  * incrementar las existencias de un artículo (se delega en la clase Artículo),  decrementar las existencias de un artículo 
  * (nunca por debajo de cero, se delega en la clase Artículo), devolver un artículo (para mostrarlo). Para  listar el almacén 
  * podría devolverse una cadena con todos los artículos del almacén (toString)
+ * 
+ * @author Antonio Carmona Bascon
  */
+
 public class Warehouse {
   /**
    * Lista donde se almacenan los articulos a añadir.

@@ -12,14 +12,18 @@ import gestisimal.classes.Article;
 /**
  * Programa para probar la clase Warehouse.
  * 
- * @author Rafael del Castillo Gomariz
+ * @author Antonio Carmona Bascon
  *
  */
-
 public class TestWarehouse {
   static Scanner sc = new Scanner(System.in);
   private static Warehouse warehouse = new Warehouse();
 
+  /**
+   * Crea el menú
+   * 
+   * @param args le da un argumento
+   */
   public static void main(String[] args) {
     Menu menu = createMenu();    
     fillWarehouse();  // valores de prueba
@@ -40,12 +44,20 @@ public class TestWarehouse {
     System.out.println("¡Hasta la próxima! ;-)");
   }
   
+  /**
+   * Le pasa un nuevo menu con la siguiente estructura
+   * 
+   * @return Menu
+   */
   private static Menu createMenu() {
     return new Menu("\nMenú de opciones",
         "Listado", "Alta de artículo", "Baja de artículo", "Modificación de artículo",
         "Entrada de mercancía", "Salida de mercancía", "Terminar");
   }
 
+  /**
+   * Crea un bucle para añadir articulos y si estan repetidos salta una excepcion
+   */
   private static void fillWarehouse() {
     for (int i = 1; i <= 5; i++) {
       try {
@@ -60,10 +72,16 @@ public class TestWarehouse {
 
 
 
+  /**
+   * Imprime por pantalla el valor de la Warehouse
+   */
   private static void showWarehouse() {
     System.out.println(warehouse);
   }
 
+  /**
+   * Añade un articulo 
+   */
   private static void addArticle() {
     try {
       warehouse.addArticle(readStr("Nombre de artículo a dar de alta"), readStr("Marca"), 
@@ -82,6 +100,9 @@ public class TestWarehouse {
 
 
 
+  /**
+   * Borra/elimina un articulo
+   */
   private static void removeArticle() {
     try {
       warehouse.deleteArticle(readInt("Código de artículo a dar de baja"));
@@ -91,6 +112,9 @@ public class TestWarehouse {
     } 
   }
 
+  /**
+   * Modifica un articulo 
+   */
   private static void modifyArticle() {
     try {
 Article article = warehouse.returnArticle(readInt("Código de artículo a modificar"));
@@ -107,6 +131,9 @@ Article article = warehouse.returnArticle(readInt("Código de artículo a modifi
     }
   }
 
+  /**
+   * Incrementa el stock
+   */
   private static void increaseStock() {
     try {
       warehouse.incrementUnitsOfArticle(readInt("Código del artículo a incrementar stock"), 
@@ -120,6 +147,9 @@ Article article = warehouse.returnArticle(readInt("Código de artículo a modifi
     }
   }
 
+  /**
+   * Decremente/Disminuye el stock
+   */
   private static void decreaseStock() {
     try {
       warehouse.decreaseUnitsOfArticle(readInt("Código de artículo de decrementar stock"), 
@@ -135,6 +165,9 @@ Article article = warehouse.returnArticle(readInt("Código de artículo a modifi
     }
   }
   
+  /**
+   * Da un mensaje de error si el codigo no pertenece a ningun articulo
+   */
   private static void printCodeError() {
     System.err.println("ERROR: Ese código no corresponde a ningún artículo.");
   }
