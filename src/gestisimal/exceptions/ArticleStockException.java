@@ -17,6 +17,5 @@ public class ArticleStockException extends Exception {
    */
   public ArticleStockException(String msg) {
     super(msg);
-    System.err.println(msg);
   }
 }
